@@ -1,16 +1,13 @@
 import React from 'react';
 
 class Component_2 extends React.Component {
-    constructor(props) {
-        super(props);
-    }  
-
     render() {
-
-        console.log(this.props.style[0]);
         return(
-            <div className="abc" style={this.props.style[0]}>
+            <div className="Component2">
                 <h1>Component 2</h1>
+                <p>
+                    I am a component!
+                </p>
             </div>
         );
     }

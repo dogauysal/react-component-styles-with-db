@@ -16,17 +16,6 @@ export default function ConvertCssToString(activeClassNames,allStyles) {
             }
         }
     }
-
-    console.log(_css);
-
+    
     return _css;
 }
-
-// var styleStr = "";
-// for(var i in cssjson){
-//     styleStr += i + " {\n"
-//     for(var j in cssjson[i]){
-//         styleStr += "\t" + j + ":" + cssjson[i][j] + ";\n"     
-//     }
-//     styleStr += "}\n"  
-// }

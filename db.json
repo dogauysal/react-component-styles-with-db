@@ -9,26 +9,31 @@
         "AppContainer": [
           "width: 100%",
           "height: auto",
-          "background-color: blue"
+          "background-color: wheat",
+          "display: inline-block",
+          "opacity: 0.7"
         ], 
         "Component1": [
-          "width: 400px",
-          "max-width: 500px",
+          "width: 20%",
           "height: 400px",
-          "max-height: 500px",
           "color: blue",
           "background-color: yellow",
           "border: 1px solid black",
-          "border-radius: 50%"
+          "display: inline-block",
+          "text-align: center",
+          "margin:10px",
+          "font-size: 16px"
         ],
         "Component2": [
-          "max-width: 300px",
+          "width: 40%",
           "height: 400px",
           "max-height: 500px",
-          "color: blue",
-          "background-color: yellow",
+          "color: white",
+          "background-color: green",
+          "display: inline-block",
           "border: 1px solid black",
-          "border-radius: '' "
+          "text-align: center",
+          "padding: 20px"
         ]
       }
     ]
