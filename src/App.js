@@ -9,7 +9,7 @@ class App extends React.Component {
     state = {
         activeClassNames: [],
         allStyles: [],
-        componentOrder: ["Component_1","Component_2","Component_1"]
+        componentOrder: []
     }
     
     getComponent(componentName) {
@@ -30,12 +30,14 @@ class App extends React.Component {
         axios
         .all([
             axios.get("http://localhost:3001/activeClassNames"),
-            axios.get("http://localhost:3001/allStyles")
+            axios.get("http://localhost:3001/allStyles"),
+            axios.get("http://localhost:3001/componentOrder")
         ])
-        .then(axios.spread((resClass,resStyle) => {
+        .then(axios.spread((resClass,resStyle,resOrder) => {
             this.setState({
                 activeClassNames: resClass.data,
-                allStyles: resStyle.data
+                allStyles: resStyle.data,
+                componentOrder:resOrder.data
             })
         }))
         .then(() => {

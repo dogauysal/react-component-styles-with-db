@@ -29,12 +29,13 @@
           "height: 400px",
           "max-height: 500px",
           "color: white",
-          "background-color: green",
+          "background-color: black",
           "display: inline-block",
           "border: 1px solid black",
           "text-align: center",
           "padding: 20px"
         ]
       }
-    ]
+    ],
+    "componentOrder": ["Component_1","Component_2","Component_1"]
   }
