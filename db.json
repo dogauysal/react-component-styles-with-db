@@ -1,41 +1,69 @@
 {
-    "activeClassNames": [
-      "AppContainer",
-      "Component1",
-      "Component2"
-    ],
-    "allStyles": [
-      {
-        "AppContainer": [
-          "width: 100%",
-          "height: auto",
-          "background-color: wheat",
-          "display: inline-block",
-          "opacity: 0.7"
-        ], 
-        "Component1": [
-          "width: 20%",
-          "height: 400px",
-          "color: blue",
-          "background-color: yellow",
-          "border: 1px solid black",
-          "display: inline-block",
-          "text-align: center",
-          "margin:10px",
-          "font-size: 16px"
-        ],
-        "Component2": [
-          "width: 40%",
+  "activeStyleNames": [
+    "*",
+    "c1",
+    "c2",
+    "c3"
+  ],
+  "allStyles": [
+    {
+      "*": {
+        "type" : "",
+        "styleList": [
+          "box-sizing : border-box"
+        ]
+      },
+      "c1": {
+        "type": "class",
+        "styleList": [
+          "width: 50%",
           "height: 400px",
           "max-height: 500px",
           "color: white",
-          "background-color: black",
+          "background-color: yellow",
           "display: inline-block",
           "border: 1px solid black",
           "text-align: center",
           "padding: 20px"
-        ]
+        ]  
+      },
+      "c2": {
+        "type": "class",
+        "styleList": [
+          "width: 50%",
+          "height: 400px",
+          "max-height: 500px",
+          "color: white",
+          "background-color: yellow",
+          "display: inline-block",
+          "border: 1px solid black",
+          "text-align: center",
+          "padding: 20px"
+        ]  
+      },
+      "c3": {
+        "type": "id",
+        "styleList": [
+          "width: 50%",
+          "height: 400px",
+          "max-height: 500px",
+          "color: white",
+          "background-color: yellow",
+          "display: inline-block",
+          "border: 1px solid black",
+          "text-align: center",
+          "padding: 20px"
+        ]  
       }
-    ],
-    "componentOrder": ["Component_1","Component_2","Component_1"]
-  }
+    }
+  ],
+  "componentOrder": [{
+    "componentName": "Component_1",
+    "id": "c3",
+    "class" : "c2"
+  },
+  {
+    "componentName": "Component_1",
+    "class": "c1"
+  }]
+}

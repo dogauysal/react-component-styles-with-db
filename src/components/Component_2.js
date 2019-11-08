@@ -1,9 +1,13 @@
 import React from 'react';
 
 class Component_2 extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+
     render() {
         return(
-            <div className="Component2">
+            <div id={this.props.id} className={this.props.className}>
                 <h1>Component 2</h1>
                 <p>
                     I am a component!

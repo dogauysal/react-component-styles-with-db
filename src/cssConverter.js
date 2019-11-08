@@ -1,15 +1,26 @@
-export default function ConvertCssToString(activeClassNames,allStyles) {
+export default function ConvertCssToString(activeStyleNames,allStyles) {
 
     var _css = "";
 
-    for (const [i, className] of activeClassNames.entries()) {
+    for (const [i, styleName] of activeStyleNames.entries()) {
 
         for (const [j, styles] of allStyles.entries()) {
-            const style  = styles[className];
-            if(style && style.length > 0) {
+            const style  = styles[styleName];
+            if(style && style.styleList.length > 0) {
 
-                _css += `.${className} {\n`; 
-                for(const [k, __style] of style.entries()) {
+                
+                switch (style.type) {
+                    case "class":
+                        _css += "."
+                        break;
+                    case "id":
+                        _css += "#"
+                    default:
+                        break;
+                }
+
+                _css += `${styleName} {\n`; 
+                for(const [k, __style] of style.styleList.entries()) {
                     _css += "\t" +  __style + ";\n";
                 } 
                 _css += "}\n";

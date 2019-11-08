@@ -7,17 +7,18 @@ import cssConverter from './cssConverter';
 class App extends React.Component {
 
     state = {
-        activeClassNames: [],
+        activeStyleNames: [],
         allStyles: [],
         componentOrder: []
     }
     
-    getComponent(componentName) {
-        switch (componentName) {
+    getComponent(comp,i) {
+        console.log(i)
+        switch (comp.componentName) {
             case "Component_1":
-                return <Component_1 />;
+                return <Component_1 className={comp.class}  id={comp.id} key={i} />;
             case "Component_2": 
-                return <Component_2 />; 
+                return <Component_2 className={comp.class} id={comp.id} key={i}/>; 
             default:
                 break;
         }
@@ -29,19 +30,19 @@ class App extends React.Component {
 
         axios
         .all([
-            axios.get("http://localhost:3001/activeClassNames"),
+            axios.get("http://localhost:3001/activeStyleNames"),
             axios.get("http://localhost:3001/allStyles"),
             axios.get("http://localhost:3001/componentOrder")
         ])
         .then(axios.spread((resClass,resStyle,resOrder) => {
             this.setState({
-                activeClassNames: resClass.data,
+                activeStyleNames: resClass.data,
                 allStyles: resStyle.data,
                 componentOrder:resOrder.data
             })
         }))
         .then(() => {
-            injectedStyles.innerHTML =  cssConverter(this.state.activeClassNames, this.state.allStyles);
+            injectedStyles.innerHTML =  cssConverter(this.state.activeStyleNames, this.state.allStyles);
             document.head.appendChild(injectedStyles);
         });
     }
@@ -49,7 +50,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="AppContainer">
-                   {this.state.componentOrder.map(c => this.getComponent(c))}
+                   {this.state.componentOrder.map((c,i ) => this.getComponent(c,i))}
             </div>
         )
     }
